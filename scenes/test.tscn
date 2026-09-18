@@ -1,0 +1,202 @@
+[gd_scene format=4 uid="uid://pagp58vakrxp"]
+
+[ext_resource type="Texture2D" uid="uid://csmbkhsgsrp1o" path="res://TILESET PROTÓTIPO AZUL.png" id="1_errlg"]
+[ext_resource type="Texture2D" uid="uid://sfht60frxy2a" path="res://icon.svg" id="2_bl13t"]
+[ext_resource type="Script" uid="uid://bqrbneebswutk" path="res://scripts/map_rotation.gd" id="2_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://qgk8vavffuk8" path="res://scenes/hole.tscn" id="3_74lek"]
+[ext_resource type="Script" uid="uid://can31fpictsv8" path="res://scripts/ball_logic.gd" id="4_j5jx5"]
+[ext_resource type="PackedScene" uid="uid://bxgee4m7mc4sl" path="res://scenes/victory_hole.tscn" id="4_lpvoh"]
+[ext_resource type="Script" uid="uid://dylk56ftdxdte" path="res://scripts/victory_hole.gd" id="5_at5dv"]
+[ext_resource type="PackedScene" uid="uid://cb7ovnimppj0g" path="res://scenes/crusher.tscn" id="6_uacia"]
+[ext_resource type="Texture2D" uid="uid://blvbrkkiih4g8" path="res://WhatsApp Image 2026-08-19 at 14.12.03.jpeg" id="7_yk7ts"]
+[ext_resource type="Texture2D" uid="uid://c2mgaj3oyw04u" path="res://WhatsApp Image 2026-03-24 at 20.42.19 (1).jpeg" id="8_yk7ts"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bl13t"]
+texture = ExtResource("1_errlg")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+17:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+0:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bl13t")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74lek"]
+radius = 15.0
+
+[node name="Node2D" type="Node2D" unique_id=409671772]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=920035897]
+
+[node name="Puzzle" type="Node2D" parent="." unique_id=951341005 node_paths=PackedStringArray("camera")]
+scale = Vector2(2, 2)
+script = ExtResource("2_iyx0m")
+camera = NodePath("../Camera2D")
+velocidade_rotacao = 5.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Puzzle" unique_id=905507169]
+tile_map_data = PackedByteArray("AAAHAAMAAAABAAEAAAAHAAUAAAABAAEAAAAHAAcAAAABAAEAAAAIAAIAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAD2//j/AAABAAEAAAD2//n/AAABAAEAAAD2//r/AAABAAEAAAD2//v/AAABAAEAAAD2//z/AAABAAEAAAD2//3/AAABAAEAAAD2//7/AAABAAEAAAD2////AAABAAEAAAD2/wAAAAABAAEAAAD2/wEAAAABAAEAAAD2/wIAAAABAAEAAAD2/wMAAAABAAEAAAD2/wQAAAABAAEAAAD2/wUAAAABAAEAAAD2/wYAAAABAAEAAAD2/wcAAAABAAEAAAD3//j/AAABAAEAAAD3//r/AAABAAEAAAD3//v/AAABAAEAAAD3//z/AAABAAEAAAD3//3/AAABAAEAAAD3//7/AAABAAEAAAD3/wcAAAABAAEAAAD4//j/AAABAAEAAAD4//7/AAABAAEAAAD4////AAABAAEAAAD4/wAAAAABAAEAAAD4/wEAAAABAAEAAAD4/wMAAAABAAEAAAD4/wUAAAABAAEAAAD4/wcAAAABAAEAAAD5//j/AAABAAEAAAD5//n/AAABAAEAAAD5//r/AAABAAEAAAD5//v/AAABAAEAAAD5//z/AAABAAEAAAD5/wEAAAABAAEAAAD5/wMAAAABAAEAAAD5/wUAAAABAAEAAAD5/wcAAAABAAEAAAD6//j/AAABAAEAAAD6//z/AAABAAEAAAD6//3/AAABAAEAAAD6//7/AAABAAEAAAD6////AAABAAEAAAD6/wEAAAABAAEAAAD6/wIAAAABAAEAAAD6/wMAAAABAAEAAAD6/wQAAAABAAEAAAD6/wUAAAABAAEAAAD6/wcAAAABAAEAAAD7//j/AAABAAEAAAD7//r/AAABAAEAAAD7////AAABAAEAAAD7/wUAAAABAAEAAAD7/wcAAAABAAEAAAD8//j/AAABAAEAAAD8//n/AAABAAEAAAD8//r/AAABAAEAAAD8////AAABAAEAAAD8/wEAAAABAAEAAAD8/wMAAAABAAEAAAD8/wUAAAABAAEAAAD8/wcAAAABAAEAAAD9//j/AAABAAEAAAD9//r/AAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAEAAAD9/wQAAAABAAEAAAD9/wUAAAABAAEAAAD9/wcAAAABAAEAAAD+//j/AAABAAEAAAD+//r/AAABAAEAAAD+//z/AAABAAEAAAD+//3/AAABAAEAAAD+//7/AAABAAEAAAD+/wEAAAABAAEAAAD+/wcAAAABAAEAAAD///j/AAABAAEAAAD///r/AAABAAEAAAD///z/AAABAAEAAAD///7/AAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAEAAAD//wQAAAABAAEAAAD//wYAAAABAAEAAAD//wcAAAABAAEAAAAAAPj/AAABAAEAAAAAAPr/AAABAAEAAAAAAP7/AAABAAEAAAAAAAEAAAABAAEAAAAAAAYAAAABAAEAAAAAAAcAAAABAAEAAAABAPj/AAABAAEAAAABAPr/AAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAcAAAABAAEAAAACAPj/AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAACAAcAAAABAAEAAAADAPj/AAABAAEAAAADAPn/AAABAAEAAAADAPr/AAABAAEAAAADAPv/AAABAAEAAAADAPz/AAABAAEAAAADAAAAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAcAAAABAAEAAAAEAPj/AAABAAEAAAAEAPz/AAABAAEAAAAEAAAAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAFAPj/AAABAAEAAAAFAPz/AAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAcAAAABAAEAAAAGAPj/AAABAAEAAAAGAPr/AAABAAEAAAAGAPv/AAABAAEAAAAGAPz/AAABAAEAAAAGAP3/AAABAAEAAAAGAAcAAAABAAEAAAAHAPj/AAABAAEAAAAHAP//AAABAAEAAAAHAAEAAAABAAEAAAAIAPj/AAABAAEAAAAIAPn/AAABAAEAAAAIAPr/AAABAAEAAAAIAPv/AAABAAEAAAAIAPz/AAABAAEAAAAIAP3/AAABAAEAAAAIAP7/AAABAAEAAAAIAP//AAABAAEAAAAIAAAAAAABAAEAAAAIAAEAAAABAAEAAAAIAAMAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="Hole" type="Node2D" parent="Puzzle" unique_id=74564028]
+
+[node name="Hole1" parent="Puzzle/Hole" unique_id=821144530 instance=ExtResource("3_74lek")]
+position = Vector2(8, -8)
+scale = Vector2(0.405, 0.405)
+
+[node name="Hole2" parent="Puzzle/Hole" unique_id=1104524264 instance=ExtResource("3_74lek")]
+position = Vector2(-72.00001, -104.500015)
+scale = Vector2(0.405, 0.405)
+
+[node name="Hole3" parent="Puzzle/Hole" unique_id=1965992717 instance=ExtResource("3_74lek")]
+position = Vector2(8.500008, 40.00003)
+scale = Vector2(0.405, 0.405)
+
+[node name="Victory_Hole" type="Node2D" parent="Puzzle" unique_id=894148196]
+
+[node name="Victory_Hole" parent="Puzzle/Victory_Hole" unique_id=1860286002 instance=ExtResource("4_lpvoh")]
+position = Vector2(88.00001, -72)
+scale = Vector2(0.815, 0.815)
+script = ExtResource("5_at5dv")
+proxima_fase = "uid://c7hahpjbnj22m"
+
+[node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
+
+[node name="Crusher" parent="Puzzle/Crusher" unique_id=137784550 instance=ExtResource("6_uacia")]
+position = Vector2(-88, 7.5)
+sprite_novo = ExtResource("7_yk7ts")
+
+[node name="Crusher2" parent="Puzzle" unique_id=780963681 instance=ExtResource("6_uacia")]
+position = Vector2(-40, -20.5)
+rotation = 1.5707964
+sprite_novo = ExtResource("8_yk7ts")
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1688362964]
+position = Vector2(-271, -208)
+gravity_scale = 0.4
+can_sleep = false
+script = ExtResource("4_j5jx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=805936397]
+shape = SubResource("CircleShape2D_74lek")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1482877688]
+scale = Vector2(0.20312501, 0.20312501)
+texture = ExtResource("2_bl13t")

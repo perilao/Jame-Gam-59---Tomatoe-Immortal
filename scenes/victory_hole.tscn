@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bxgee4m7mc4sl"]
+
+[ext_resource type="Texture2D" uid="uid://c2mgaj3oyw04u" path="res://WhatsApp Image 2026-03-24 at 20.42.19 (1).jpeg" id="1_nhc6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 7.0
+
+[node name="Victory_Hole" type="Area2D" unique_id=1717464914]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=341661599]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=622452967]
+scale = Vector2(0.053880204, 0.053880204)
+texture = ExtResource("1_nhc6f")

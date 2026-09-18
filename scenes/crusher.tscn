@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cb7ovnimppj0g"]
+
+[ext_resource type="Script" uid="uid://270x7byxye0c" path="res://scripts/crusher.gd" id="1_pmi7a"]
+[ext_resource type="Texture2D" uid="uid://dkj4d1024t0ua" path="res://image (2).png" id="2_i7g8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmi7a"]
+size = Vector2(11, 20)
+
+[node name="Crusher" type="Area2D" unique_id=137784550]
+z_index = 1
+collision_layer = 2
+script = ExtResource("1_pmi7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1348825821]
+shape = SubResource("RectangleShape2D_pmi7a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=144313087]
+position = Vector2(-4.4703484e-07, -1.0430813e-06)
+scale = Vector2(0.01953125, 0.026041668)
+texture = ExtResource("2_i7g8o")
