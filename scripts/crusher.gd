@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func _on_body_entered(corpo: Node2D) -> void:
 	if corpo.has_method("entrar_triturador"):
-		corpo.call_deferred("entrar_triturador", lentidao, anim_nova, global_position, direcao)
+		corpo.call_deferred("entrar_triturador", self, lentidao, anim_nova, global_position, direcao)
 
 func _on_body_exited(corpo: Node2D) -> void:
 	if corpo.has_method("sair_triturador"):
-		corpo.call_deferred("sair_triturador", anim_nova, global_position)
+		corpo.call_deferred("sair_triturador", self)

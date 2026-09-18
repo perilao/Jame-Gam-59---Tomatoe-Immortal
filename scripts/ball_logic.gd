@@ -6,6 +6,10 @@ var anim_original: String
 var camada_nova: AnimatedSprite2D
 var mat_antigo: ShaderMaterial
 var mat_novo: ShaderMaterial
+var trituradores := {}   # triturador -> lentidão
+var dono: Node = null    # triturador dono da transição atual
+var anim_transicao := ""
+var centro_transicao := Vector2.ZERO
 var normal_transicao := Vector2.RIGHT
 #PHASES
 var origem: Vector2
@@ -35,6 +39,18 @@ func _ready() -> void:
 	sprite.add_child(camada_nova)
 	_fim_transicao()
 
+func _atualizar_damp() -> void:
+	linear_damp = damp_original if trituradores.is_empty() else trituradores.values().max()
+
+func _encerrar_transicao() -> void:
+	if dono == null:
+		return
+	if (global_position - centro_transicao).dot(normal_transicao) > 0.0 and sprite.animation != anim_transicao:
+		sprite.play(anim_transicao)
+		sprite.set_frame_and_progress(camada_nova.frame, camada_nova.frame_progress)
+	dono = null
+	_fim_transicao()
+
 func _fim_transicao() -> void:
 	camada_nova.hide()
 	mat_antigo.set_shader_parameter("ativo", false)
@@ -60,7 +76,9 @@ func cair(pos_buraco: Vector2) -> void:
 	sleeping = false
 	caindo = false
 	sprite.play(anim_original)
-	linear_damp = damp_original
+	trituradores.clear()
+	dono = null
+	_atualizar_damp()
 
 func next_phase(pos_buraco: Vector2, cena: String) -> void:
 	if caindo:
@@ -68,11 +86,16 @@ func next_phase(pos_buraco: Vector2, cena: String) -> void:
 	await _animar_queda(pos_buraco)
 	get_tree().change_scene_to_file(cena)
 
-func entrar_triturador(lentidao: float, anim_nova: String, centro: Vector2, direcao: Vector2) -> void:
-	linear_damp = lentidao
+func entrar_triturador(t: Node, lentidao: float, anim_nova: String, centro: Vector2, direcao: Vector2) -> void:
+	trituradores[t] = lentidao
+	_atualizar_damp()
+	_encerrar_transicao()
 	if sprite.animation == anim_nova:
 		return
 	var lado_entrada := 1.0 if (global_position - centro).dot(direcao) > 0.0 else -1.0
+	dono = t
+	anim_transicao = anim_nova
+	centro_transicao = centro
 	normal_transicao = -lado_entrada * direcao
 	camada_nova.play(anim_nova)
 	camada_nova.show()
@@ -81,12 +104,11 @@ func entrar_triturador(lentidao: float, anim_nova: String, centro: Vector2, dire
 		m.set_shader_parameter("normal_corte", normal_transicao)
 		m.set_shader_parameter("ativo", true)
 
-func sair_triturador(anim_nova: String, centro: Vector2) -> void:
-	linear_damp = damp_original
-	if (global_position - centro).dot(normal_transicao) > 0.0 and sprite.animation != anim_nova:
-		sprite.play(anim_nova)
-		sprite.set_frame_and_progress(camada_nova.frame, camada_nova.frame_progress)
-	_fim_transicao()
+func sair_triturador(t: Node) -> void:
+	trituradores.erase(t)
+	_atualizar_damp()
+	if t == dono:
+		_encerrar_transicao()
 
 func trocar_sprite(textura: Texture2D) -> void:
 	sprite.texture = textura

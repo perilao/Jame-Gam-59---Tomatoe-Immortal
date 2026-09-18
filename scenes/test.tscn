@@ -175,10 +175,12 @@ proxima_fase = "uid://c7hahpjbnj22m"
 
 [node name="Crusher" parent="Puzzle/Crusher" unique_id=137784550 instance=ExtResource("6_uacia")]
 position = Vector2(-88, 7.5)
+lentidao = 10.0
 
 [node name="Crusher2" parent="Puzzle/Crusher" unique_id=780963681 instance=ExtResource("6_uacia")]
 position = Vector2(-71.5, 54)
 rotation = 1.5707964
+lentidao = 10.0
 anim_nova = "idle"
 
 [node name="Ball" parent="." unique_id=362484177 instance=ExtResource("9_uacia")]
