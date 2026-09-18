@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://d4grr2dyn2sct"]
 
 [ext_resource type="Script" uid="uid://can31fpictsv8" path="res://scripts/ball_logic.gd" id="1_cxlvu"]
+[ext_resource type="Shader" uid="uid://dxwxd7nrkt31l" path="res://shaders/ball_transition.gdshader" id="2_4dx81"]
 [ext_resource type="Texture2D" uid="uid://dkudwklll6uju" path="res://sprites/teste/tmt3-ezgif.com-gif-to-sprite-converter (2).png" id="2_cxlvu"]
 [ext_resource type="Texture2D" uid="uid://ekmvartqhr4f" path="res://sprites/teste/tmt4-ezgif.com-gif-to-sprite-converter.png" id="2_f7cbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74lek"]
 radius = 15.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7g8o"]
+shader = ExtResource("2_4dx81")
+shader_parameter/ativo = false
+shader_parameter/lado = 1.0
+shader_parameter/ponto_corte = Vector2(0, 0)
+shader_parameter/normal_corte = Vector2(1, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwo8l"]
 atlas = ExtResource("2_f7cbr")
@@ -90,6 +98,7 @@ script = ExtResource("1_cxlvu")
 shape = SubResource("CircleShape2D_74lek")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=669907146]
+material = SubResource("ShaderMaterial_i7g8o")
 scale = Vector2(0.016015625, 0.016015625)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"

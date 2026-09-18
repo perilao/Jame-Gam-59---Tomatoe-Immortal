@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://pagp58vakrxp"]
 
-[ext_resource type="Texture2D" uid="uid://csmbkhsgsrp1o" path="res://TILESET PROTÓTIPO AZUL.png" id="1_errlg"]
+[ext_resource type="Texture2D" uid="uid://csmbkhsgsrp1o" path="res://outros/TILESET PROTÓTIPO AZUL.png" id="1_errlg"]
 [ext_resource type="Script" uid="uid://bqrbneebswutk" path="res://scripts/map_rotation.gd" id="2_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://qgk8vavffuk8" path="res://scenes/hole.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://bxgee4m7mc4sl" path="res://scenes/victory_hole.tscn" id="4_lpvoh"]
@@ -177,7 +177,7 @@ proxima_fase = "uid://c7hahpjbnj22m"
 position = Vector2(-88, 7.5)
 
 [node name="Crusher2" parent="Puzzle/Crusher" unique_id=780963681 instance=ExtResource("6_uacia")]
-position = Vector2(-40, -20.5)
+position = Vector2(-71.5, 54)
 rotation = 1.5707964
 anim_nova = "idle"
 

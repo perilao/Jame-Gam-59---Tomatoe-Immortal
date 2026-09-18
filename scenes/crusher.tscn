@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cb7ovnimppj0g"]
 
 [ext_resource type="Script" uid="uid://270x7byxye0c" path="res://scripts/crusher.gd" id="1_pmi7a"]
-[ext_resource type="Texture2D" uid="uid://dkj4d1024t0ua" path="res://image (2).png" id="2_i7g8o"]
+[ext_resource type="Texture2D" uid="uid://dkj4d1024t0ua" path="res://outros/image (2).png" id="2_i7g8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmi7a"]
 size = Vector2(11, 20)

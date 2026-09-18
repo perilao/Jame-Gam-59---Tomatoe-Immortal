@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csmbkhsgsrp1o"
-path="res://.godot/imported/TILESET PROTÓTIPO AZUL.png-2d772700e485653a6747c4a0063f9315.ctex"
+uid="uid://dkj4d1024t0ua"
+path="res://.godot/imported/image (2).png-40b3383ea97443914aaf56cb2735d48d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TILESET PROTÓTIPO AZUL.png"
-dest_files=["res://.godot/imported/TILESET PROTÓTIPO AZUL.png-2d772700e485653a6747c4a0063f9315.ctex"]
+source_file="res://outros/image (2).png"
+dest_files=["res://.godot/imported/image (2).png-40b3383ea97443914aaf56cb2735d48d.ctex"]
 
 [params]
 
