@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var lentidao := 6.0
-@export var sprite_novo: Texture2D
+@export var anim_nova := "crushed"
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -13,4 +13,4 @@ func _on_body_entered(corpo: Node2D) -> void:
 
 func _on_body_exited(corpo: Node2D) -> void:
 	if corpo.has_method("sair_triturador"):
-		corpo.call_deferred("sair_triturador", sprite_novo)
+		corpo.call_deferred("sair_triturador", anim_nova)

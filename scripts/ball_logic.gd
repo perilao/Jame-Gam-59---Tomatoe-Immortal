@@ -1,7 +1,9 @@
 extends RigidBody2D
 
+#ANIMATION
+@onready var sprite: AnimatedSprite2D = $Sprite2D
+var anim_original: String
 
-@onready var sprite: Sprite2D = $Sprite2D
 var origem: Vector2
 var caindo := false
 var escala_original: Vector2
@@ -14,8 +16,8 @@ func _ready() -> void:
 	origem = global_position
 	escala_original = sprite.scale
 	damp_original = linear_damp
-	textura_original = sprite.texture
-	tamanho_original = sprite.texture.get_size() * sprite.scale
+	anim_original = sprite.animation
+	#tamanho_original = sprite.texture.get_size() * sprite.scale
 func _animar_queda(pos_buraco: Vector2) -> void:
 	caindo = true
 	freeze = true
@@ -35,7 +37,7 @@ func cair(pos_buraco: Vector2) -> void:
 	freeze = false
 	sleeping = false
 	caindo = false
-	sprite.texture = textura_original
+	sprite.play(anim_original)
 	linear_damp = damp_original
 
 func next_phase(pos_buraco: Vector2, cena: String) -> void:
@@ -48,9 +50,9 @@ func entrar_triturador(lentidao: float) -> void:
 	linear_damp = lentidao
 	
 
-func sair_triturador(nova_textura: Texture2D) -> void:
+func sair_triturador(anim_nova: String) -> void:
 	linear_damp = damp_original
-	trocar_sprite(nova_textura)
+	sprite.play(anim_nova)
 
 func trocar_sprite(textura: Texture2D) -> void:
 	sprite.texture = textura
