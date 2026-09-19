@@ -168,7 +168,7 @@ scale = Vector2(0.405, 0.405)
 position = Vector2(88.00001, -72)
 scale = Vector2(0.815, 0.815)
 script = ExtResource("5_at5dv")
-proxima_fase = "uid://c7hahpjbnj22m"
+proxima_fase = "uid://c00pxao2c41n6"
 
 [node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
 
