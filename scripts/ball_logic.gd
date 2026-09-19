@@ -80,8 +80,11 @@ func cair(pos_buraco: Vector2) -> void:
 	dono = null
 	_atualizar_damp()
 
-func next_phase(pos_buraco: Vector2, cena: String) -> void:
+func next_phase(pos_buraco: Vector2, cena: String, anim_victory: String) -> void:
 	if caindo:
+		return
+	if anim_victory != "" and sprite.animation != anim_victory:
+		cair(pos_buraco)
 		return
 	await _animar_queda(pos_buraco)
 	SceneManager.mudar_cena(cena)

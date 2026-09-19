@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bqrbneebswutk" path="res://scripts/map_rotation.gd" id="2_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://qgk8vavffuk8" path="res://scenes/hole.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://bxgee4m7mc4sl" path="res://scenes/victory_hole.tscn" id="4_lpvoh"]
-[ext_resource type="Script" uid="uid://dylk56ftdxdte" path="res://scripts/victory_hole.gd" id="5_at5dv"]
 [ext_resource type="PackedScene" uid="uid://cb7ovnimppj0g" path="res://scenes/crusher.tscn" id="6_uacia"]
 [ext_resource type="PackedScene" uid="uid://d4grr2dyn2sct" path="res://scenes/ball.tscn" id="9_uacia"]
 
@@ -167,8 +166,8 @@ scale = Vector2(0.405, 0.405)
 [node name="Victory_Hole" parent="Puzzle/Victory_Hole" unique_id=1860286002 instance=ExtResource("4_lpvoh")]
 position = Vector2(88.00001, -72)
 scale = Vector2(0.815, 0.815)
-script = ExtResource("5_at5dv")
 proxima_fase = "uid://c00pxao2c41n6"
+anim_victory = "idle"
 
 [node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
 
