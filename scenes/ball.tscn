@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ekmvartqhr4f" path="res://sprites/teste/tmt4-ezgif.com-gif-to-sprite-converter.png" id="2_f7cbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74lek"]
-radius = 15.0
+radius = 16.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i7g8o"]
 shader = ExtResource("2_4dx81")

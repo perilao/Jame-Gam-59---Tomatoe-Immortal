@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://km0hg35unrrm"]
+
+[ext_resource type="Script" uid="uid://igertmpsvm5d" path="res://scripts/scene_manager.gd" id="1_65mdo"]
+[ext_resource type="Shader" uid="uid://dn6dk625d53e8" path="res://shaders/transition_shader.gdshader" id="2_b81s6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("2_b81s6")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.0
+shader_parameter/pixel_size = 9.0
+shader_parameter/resolution = Vector2(400, 400)
+shader_parameter/dither_offset = Vector2(2, 0)
+shader_parameter/bayer_size = 2
+shader_parameter/interpolate = true
+shader_parameter/invert = true
+shader_parameter/falloff = 2.82600013097512
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_h7lqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q7wi7"]
+resource_name = "transition_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.70000008075, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6k21d"]
+_data = {
+&"RESET": SubResource("Animation_h7lqg"),
+&"transition_out": SubResource("Animation_q7wi7")
+}
+
+[node name="Scene_Manager" type="CanvasLayer" unique_id=1204374674]
+script = ExtResource("1_65mdo")
+
+[node name="TransitionColor" type="ColorRect" parent="." unique_id=861608579]
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+
+[node name="TransitionAnimation" type="AnimationPlayer" parent="." unique_id=2086723386]
+libraries/ = SubResource("AnimationLibrary_6k21d")

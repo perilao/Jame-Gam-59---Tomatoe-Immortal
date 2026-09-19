@@ -9,7 +9,7 @@ var angulo_alvo := 0.0  # rotação aparente do labirinto
 
 func _ready() -> void:
 	camera.ignore_rotation = false
-	#camera.zoom = Vector2(1.5, 1.5)
+	camera.zoom = Vector2(1.5, 1.5)
 	
 
 func _process(delta: float) -> void:
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		girar(90)
 
 	camera.rotation = lerp_angle(camera.rotation, -angulo_alvo, 1.0 - exp(-velocidade_rotacao * delta))
-	#camera.global_position = ball.global_position
+	camera.global_position = ball.global_position
 
 func girar(graus: float) -> void:
 	angulo_alvo += deg_to_rad(graus)

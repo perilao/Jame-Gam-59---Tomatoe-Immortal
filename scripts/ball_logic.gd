@@ -84,7 +84,7 @@ func next_phase(pos_buraco: Vector2, cena: String) -> void:
 	if caindo:
 		return
 	await _animar_queda(pos_buraco)
-	get_tree().change_scene_to_file(cena)
+	SceneManager.mudar_cena(cena)
 
 func entrar_triturador(t: Node, lentidao: float, anim_nova: String, centro: Vector2, direcao: Vector2) -> void:
 	trituradores[t] = lentidao
