@@ -18,13 +18,12 @@ config/icon="res://outros/icon.svg"
 [autoload]
 
 SceneManager="*uid://km0hg35unrrm"
+SoundControl="*uid://88ypb55wu2qa"
 
 [display]
 
 window/size/viewport_width=1200
 window/size/viewport_height=700
-window/size/window_width_override=1920
-window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://88ypb55wu2qa"]
+
+[ext_resource type="Script" uid="uid://djbg6gi725lao" path="res://scripts/sound_control.gd" id="1_85dk6"]
+
+[node name="SoundControl" type="Node" unique_id=1776721865]
+script = ExtResource("1_85dk6")

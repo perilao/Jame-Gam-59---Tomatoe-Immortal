@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d22mpp8bafwfj" path="res://sprites/player/TOMATINHOCORTADINHO_SPRITESHEET.png" id="5_fwo8l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74lek"]
-radius = 16.0
+radius = 15.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i7g8o"]
 shader = ExtResource("2_4dx81")
@@ -111,4 +111,4 @@ scale = Vector2(0.06445312, 0.06445312)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"crushed"
 autoplay = "idle"
-frame_progress = 0.395847
+frame_progress = 0.2860044
