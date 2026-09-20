@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cb3jisatuikn5"]
+
+[ext_resource type="Texture2D" uid="uid://5mgy6q078e4k" path="res://sprites/background/image (3).png" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://dx8xi7pq38enc" path="res://scripts/animated_button.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://d34nqsoa7xk3l" path="res://scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://v24wgsuyg7vo" path="res://sprites/objects/OBJETO_ESPECIAL_CURA.png" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control" unique_id=1831751865]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wu84c")
+prox_cena = "uid://pagp58vakrxp"
+
+[node name="Image(3)" type="Sprite2D" parent="." unique_id=1732074451]
+position = Vector2(633.0001, 350.00003)
+scale = Vector2(1.4702048, 1.4702048)
+texture = ExtResource("1_bqqt6")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=200360901]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 471.99997
+offset_right = 1022.0
+offset_bottom = 984.0
+scale = Vector2(0.385, 0.385)
+texture_normal = ExtResource("2_ekxnf")
+stretch_mode = 0
+script = ExtResource("1_l6cm7")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
