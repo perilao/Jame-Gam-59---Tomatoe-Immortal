@@ -28,6 +28,7 @@ stream = ExtResource("5_14hci")
 
 [node name="hit_wall" type="AudioStreamPlayer" parent="." unique_id=754354682]
 stream = ExtResource("6_spwh5")
+volume_db = 3.0
 
 [node name="error" type="AudioStreamPlayer" parent="." unique_id=820096474]
 stream = ExtResource("7_spwh5")
@@ -38,5 +39,5 @@ mix_target = 2
 
 [node name="background_music" type="AudioStreamPlayer" parent="." unique_id=614246844]
 stream = ExtResource("9_ojp18")
-volume_db = -17.333
+volume_db = -25.0
 autoplay = true

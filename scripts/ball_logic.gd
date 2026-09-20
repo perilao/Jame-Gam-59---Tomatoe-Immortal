@@ -62,7 +62,7 @@ func _on_batida(corpo: Node) -> void:
 	if impacto < velocidade_minima:
 		return
 	SoundControl.hit_wall.pitch_scale = randf_range(0.9, 1.1)
-	SoundControl.hit_wall.volume_db = linear_to_db(clampf(impacto / velocidade_maxima, 0.3, 1.0))
+	#SoundControl.hit_wall.volume_db = linear_to_db(clampf(impacto / velocidade_maxima, 0.3, 1.0))
 	SoundControl.hit_wall.play()
 
 func _spawn_efeito() -> void:
