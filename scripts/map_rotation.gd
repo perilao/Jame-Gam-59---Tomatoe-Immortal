@@ -10,8 +10,11 @@ var _tween_zoom: Tween
 
 var angulo_alvo := 0.0  # rotação aparente do labirinto
 
+@onready var mapa: TileMapLayer = $TileMapLayer
+
 func _ready() -> void:
 	camera.ignore_rotation = false
+	_centralizar_camera()
 	zoom_base = camera.zoom
 	#camera.zoom = Vector2(1.5, 1.5)
 	
@@ -24,6 +27,12 @@ func _process(delta: float) -> void:
 	
 	camera.rotation = lerp_angle(camera.rotation, -angulo_alvo, 1.0 - exp(-velocidade_rotacao * delta))
 	#camera.global_position = ball.global_position
+
+func _centralizar_camera() -> void:
+	var r := mapa.get_used_rect()
+	var centro := (Vector2(r.position) + Vector2(r.size) / 2.0) * Vector2(mapa.tile_set.tile_size)
+	camera.global_position = mapa.to_global(centro)
+	camera.reset_smoothing()
 
 func girar(graus: float) -> void:
 	angulo_alvo += deg_to_rad(graus)

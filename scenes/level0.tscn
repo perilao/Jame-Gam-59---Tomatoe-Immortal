@@ -292,6 +292,7 @@ sprite_frames = SubResource("SpriteFrames_3mf5k")
 animation = &"turn_right"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=920035897]
+position = Vector2(-32, -32)
 
 [node name="Puzzle" type="Node2D" parent="." unique_id=951341005 node_paths=PackedStringArray("camera")]
 scale = Vector2(2, 2)
