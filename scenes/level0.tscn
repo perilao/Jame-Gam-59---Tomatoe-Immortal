@@ -323,12 +323,13 @@ scale = Vector2(0.405, 0.405)
 position = Vector2(-8.000008, -72)
 scale = Vector2(0.815, 0.815)
 proxima_fase = "uid://c00pxao2c41n6"
-anim_victory = "idle"
+anim_victory = "pieces"
 
 [node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
 
 [node name="Crusher" parent="Puzzle/Crusher" unique_id=137784550 instance=ExtResource("5_6q6d4")]
 position = Vector2(40, -24)
+anim_nova = "idle"
 
 [node name="Crusher3" parent="Puzzle/Crusher" unique_id=455207057 instance=ExtResource("5_6q6d4")]
 position = Vector2(-88, -56)
@@ -337,7 +338,7 @@ rotation = 1.5858482
 [node name="Crusher2" parent="Puzzle/Crusher" unique_id=780963681 instance=ExtResource("5_6q6d4")]
 position = Vector2(-32, 40)
 rotation = 3.1648352
-anim_nova = "idle"
+anim_nova = "pieces"
 
 [node name="Ball" parent="." unique_id=362484177 instance=ExtResource("6_l3elg")]
 position = Vector2(-144, -48)
