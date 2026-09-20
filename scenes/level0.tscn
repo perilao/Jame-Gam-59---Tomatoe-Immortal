@@ -333,15 +333,18 @@ anim_victory = "pieces"
 
 [node name="Crusher" parent="Puzzle/Crusher" unique_id=137784550 instance=ExtResource("5_6q6d4")]
 position = Vector2(40, -24)
+tipo = "obj3"
 anim_nova = "idle"
 
 [node name="Crusher3" parent="Puzzle/Crusher" unique_id=455207057 instance=ExtResource("5_6q6d4")]
 position = Vector2(-88, -56)
 rotation = 1.5858482
+direcao = Vector2(0, 1)
 
 [node name="Crusher2" parent="Puzzle/Crusher" unique_id=780963681 instance=ExtResource("5_6q6d4")]
 position = Vector2(-32, 40)
 rotation = 3.1648352
+tipo = "obj2"
 anim_nova = "pieces"
 
 [node name="Ball" parent="." unique_id=362484177 instance=ExtResource("6_l3elg")]

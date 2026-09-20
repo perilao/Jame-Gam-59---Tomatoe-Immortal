@@ -314,10 +314,6 @@ tile_map_data = PackedByteArray("AAAIAPn/AwAGAAAAAAAIAPr/AwAGAAEAAAAIAPv/AwAGAAE
 position = Vector2(-89.49999, -54.999996)
 scale = Vector2(0.405, 0.405)
 
-[node name="Hole4" parent="Puzzle/Hole" unique_id=1564354773 instance=ExtResource("3_conm7")]
-position = Vector2(-135, -8.499992)
-scale = Vector2(0.405, 0.405)
-
 [node name="Hole2" parent="Puzzle/Hole" unique_id=1104524264 instance=ExtResource("3_conm7")]
 position = Vector2(102.49999, -87.49999)
 scale = Vector2(0.405, 0.405)
