@@ -20,6 +20,8 @@ var escala_original: Vector2
 var damp_original := 0.0
 var textura_original: Texture2D
 var tamanho_original: Vector2
+#EXPLOSION EFFECT
+@export var efeito_spawn: PackedScene
 
 func _ready() -> void:
 	origem = global_position
@@ -38,6 +40,15 @@ func _ready() -> void:
 	camada_nova.scale = Vector2.ONE
 	sprite.add_child(camada_nova)
 	_fim_transicao()
+
+func _spawn_efeito() -> void:
+	if efeito_spawn == null:
+		return
+	var p := efeito_spawn.instantiate() as CPUParticles2D
+	get_parent().add_child(p)
+	p.global_position = origem
+	p.emitting = true
+	p.finished.connect(p.queue_free)
 
 func _atualizar_damp() -> void:
 	linear_damp = damp_original if trituradores.is_empty() else trituradores.values().max()
@@ -79,6 +90,7 @@ func cair(pos_buraco: Vector2) -> void:
 	trituradores.clear()
 	dono = null
 	_atualizar_damp()
+	_spawn_efeito()
 
 func next_phase(pos_buraco: Vector2, cena: String, anim_victory: String) -> void:
 	if caindo:

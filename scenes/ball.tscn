@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://can31fpictsv8" path="res://scripts/ball_logic.gd" id="1_cxlvu"]
 [ext_resource type="Shader" uid="uid://dxwxd7nrkt31l" path="res://shaders/ball_transition.gdshader" id="2_4dx81"]
+[ext_resource type="PackedScene" uid="uid://qvgiar22mnbd" path="res://scenes/spawn_effect.tscn" id="2_jj7gd"]
 [ext_resource type="Texture2D" uid="uid://c6xv14ofobnx6" path="res://sprites/player/TOMATINHOAMASSADINHO_SPRITESHEET.png" id="3_eew57"]
 [ext_resource type="Texture2D" uid="uid://pr8fsbwgj5ke" path="res://sprites/player/TOMATINHOFOFINHO_SPRITESHEET.png" id="4_jj7gd"]
 [ext_resource type="Texture2D" uid="uid://d22mpp8bafwfj" path="res://sprites/player/TOMATINHOCORTADINHO_SPRITESHEET.png" id="5_fwo8l"]
@@ -101,6 +102,7 @@ animations = [{
 gravity_scale = 0.4
 can_sleep = false
 script = ExtResource("1_cxlvu")
+efeito_spawn = ExtResource("2_jj7gd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=694163304]
 shape = SubResource("CircleShape2D_74lek")
