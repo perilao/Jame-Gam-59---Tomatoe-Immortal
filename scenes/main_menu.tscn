@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wu84c")
-prox_cena = "uid://pagp58vakrxp"
+prox_cena = "uid://qtu7fflbonot"
 
 [node name="Image(3)" type="Sprite2D" parent="." unique_id=1732074451]
 position = Vector2(633.0001, 350.00003)

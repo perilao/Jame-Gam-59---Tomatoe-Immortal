@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://rsf7mp8r5nmo"]
+
+[ext_resource type="Script" uid="uid://bxfypsv685t7h" path="res://scenes/ending_screen.gd" id="1_jkwpc"]
+[ext_resource type="Texture2D" uid="uid://5mgy6q078e4k" path="res://sprites/background/image (3).png" id="1_t4ahs"]
+[ext_resource type="Script" uid="uid://dx8xi7pq38enc" path="res://scripts/animated_button.gd" id="3_0joeg"]
+[ext_resource type="Texture2D" uid="uid://cadl7uop06bm2" path="res://sprites/objects/OBJETO_ESPECIAL_ESPADAS.png" id="3_jkwpc"]
+
+[node name="EndingScreen" type="Control" unique_id=1634334704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jkwpc")
+prox_cena = "uid://cb3jisatuikn5"
+
+[node name="Image(3)" type="Sprite2D" parent="." unique_id=1714805595]
+position = Vector2(633.0001, 350.00003)
+scale = Vector2(1.4702048, 1.4702048)
+texture = ExtResource("1_t4ahs")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1511924273]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 471.99997
+offset_right = 1022.0
+offset_bottom = 984.0
+scale = Vector2(0.385, 0.385)
+texture_normal = ExtResource("3_jkwpc")
+stretch_mode = 0
+script = ExtResource("3_0joeg")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
