@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://5mgy6q078e4k" path="res://sprites/background/image (3).png" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://dx8xi7pq38enc" path="res://scripts/animated_button.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://d34nqsoa7xk3l" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://v24wgsuyg7vo" path="res://sprites/objects/OBJETO_ESPECIAL_CURA.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://gikulc48ma6p" path="res://sprites/ui/botão play.png" id="3_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://0wofbvaav8vl" path="res://sprites/ui/Papomato!_logo.png" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://cudlll2rp2mj3" path="res://scripts/title_float.gd" id="6_rtw2f"]
 
@@ -24,12 +24,12 @@ texture = ExtResource("1_bqqt6")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=200360901]
 layout_mode = 0
-offset_left = 792.00006
-offset_top = 672.0
-offset_right = 1304.0
-offset_bottom = 1184.0
+offset_left = 712.0
+offset_top = 600.0
+offset_right = 1394.3528
+offset_bottom = 1282.3528
 scale = Vector2(0.68, 0.68)
-texture_normal = ExtResource("2_ekxnf")
+texture_normal = ExtResource("3_rtw2f")
 stretch_mode = 0
 script = ExtResource("1_l6cm7")
 distancia = 800.0

@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bxfypsv685t7h" path="res://scripts/ending_screen.gd" id="1_jkwpc"]
 [ext_resource type="Texture2D" uid="uid://5mgy6q078e4k" path="res://sprites/background/image (3).png" id="1_t4ahs"]
 [ext_resource type="Script" uid="uid://dx8xi7pq38enc" path="res://scripts/animated_button.gd" id="3_0joeg"]
-[ext_resource type="Texture2D" uid="uid://cadl7uop06bm2" path="res://sprites/objects/OBJETO_ESPECIAL_ESPADAS.png" id="3_jkwpc"]
+[ext_resource type="Texture2D" uid="uid://y48h4ng2u0w3" path="res://sprites/ui/botão menu.png" id="3_4313b"]
+[ext_resource type="Texture2D" uid="uid://doki4kuw7avnd" path="res://sprites/ui/thanks.png" id="5_4313b"]
+[ext_resource type="Script" uid="uid://cudlll2rp2mj3" path="res://scripts/title_float.gd" id="6_qpc4k"]
 
 [node name="EndingScreen" type="Control" unique_id=1634334704]
 layout_mode = 3
@@ -22,13 +24,23 @@ texture = ExtResource("1_t4ahs")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1511924273]
 layout_mode = 0
-offset_left = 791.99994
-offset_top = 656.0
-offset_right = 1304.0
-offset_bottom = 1168.0
+offset_left = 768.0
+offset_top = 616.00006
+offset_right = 1369.6001
+offset_bottom = 1217.6001
 scale = Vector2(0.625, 0.625)
-texture_normal = ExtResource("3_jkwpc")
+texture_normal = ExtResource("3_4313b")
 stretch_mode = 0
 script = ExtResource("3_0joeg")
+
+[node name="title" type="TextureRect" parent="." unique_id=1059889086]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 72.0
+offset_right = 1650.0
+offset_bottom = 543.0
+texture = ExtResource("5_4313b")
+script = ExtResource("6_qpc4k")
+duracao = 2.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
