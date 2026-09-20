@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://csmbkhsgsrp1o" path="res://outros/TILESET PROTÓTIPO AZUL.png" id="2_bbk5w"]
 [ext_resource type="PackedScene" uid="uid://qgk8vavffuk8" path="res://scenes/hole.tscn" id="3_conm7"]
 [ext_resource type="PackedScene" uid="uid://bxgee4m7mc4sl" path="res://scenes/victory_hole.tscn" id="4_d3jkd"]
-[ext_resource type="Script" uid="uid://dylk56ftdxdte" path="res://scripts/victory_hole.gd" id="5_u3awl"]
 [ext_resource type="PackedScene" uid="uid://cb7ovnimppj0g" path="res://scenes/crusher.tscn" id="6_2ku1j"]
 [ext_resource type="PackedScene" uid="uid://d4grr2dyn2sct" path="res://scenes/ball.tscn" id="7_f31uk"]
 
@@ -168,8 +167,8 @@ scale = Vector2(0.405, 0.405)
 [node name="Victory_Hole" parent="Puzzle/Victory_Hole" unique_id=1860286002 instance=ExtResource("4_d3jkd")]
 position = Vector2(-103.99999, -88)
 scale = Vector2(0.815, 0.815)
-script = ExtResource("5_u3awl")
-proxima_fase = "uid://c7hahpjbnj22m"
+proxima_fase = "uid://bqv1i0vuqrths"
+anim_victory = "cruched"
 
 [node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
 

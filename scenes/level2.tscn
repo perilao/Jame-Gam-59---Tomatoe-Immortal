@@ -171,7 +171,8 @@ scale = Vector2(0.405, 0.405)
 [node name="Victory_Hole" parent="Puzzle/Victory_Hole" unique_id=1860286002 instance=ExtResource("4_bo4dx")]
 position = Vector2(23.999992, -8)
 scale = Vector2(0.815, 0.815)
-proxima_fase = "uid://c7hahpjbnj22m"
+proxima_fase = "uid://6twac644ra7k"
+anim_victory = "cruched"
 
 [node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
 

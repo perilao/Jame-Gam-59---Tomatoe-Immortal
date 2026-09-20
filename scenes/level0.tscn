@@ -1,0 +1,188 @@
+[gd_scene format=4 uid="uid://qtu7fflbonot"]
+
+[ext_resource type="Script" uid="uid://bqrbneebswutk" path="res://scripts/map_rotation.gd" id="1_gklfi"]
+[ext_resource type="Texture2D" uid="uid://csmbkhsgsrp1o" path="res://outros/TILESET PROTÓTIPO AZUL.png" id="2_cm1v6"]
+[ext_resource type="PackedScene" uid="uid://qgk8vavffuk8" path="res://scenes/hole.tscn" id="3_wrnl3"]
+[ext_resource type="PackedScene" uid="uid://bxgee4m7mc4sl" path="res://scenes/victory_hole.tscn" id="4_tcqsn"]
+[ext_resource type="PackedScene" uid="uid://cb7ovnimppj0g" path="res://scenes/crusher.tscn" id="5_6q6d4"]
+[ext_resource type="PackedScene" uid="uid://d4grr2dyn2sct" path="res://scenes/ball.tscn" id="6_l3elg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bl13t"]
+texture = ExtResource("2_cm1v6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+17:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+0:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bl13t")
+
+[node name="Node2D" type="Node2D" unique_id=409671772]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=920035897]
+
+[node name="Puzzle" type="Node2D" parent="." unique_id=951341005 node_paths=PackedStringArray("camera")]
+scale = Vector2(2, 2)
+script = ExtResource("1_gklfi")
+camera = NodePath("../Camera2D")
+velocidade_rotacao = 5.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Puzzle" unique_id=905507169]
+tile_map_data = PackedByteArray("AAAFAP3/AAABAAEAAAAFAPv/AAABAAEAAAD4/wMAAAABAAEAAAD4/wIAAAABAAEAAAD4/wEAAAABAAEAAAD4/wAAAAABAAEAAAD4//z/AAABAAEAAAD4//r/AAABAAEAAAD4//v/AAABAAEAAAD4//3/AAABAAEAAAD4//7/AAABAAEAAAD4////AAABAAEAAAD6//7/AAABAAEAAAD6////AAABAAEAAAD7////AAABAAEAAAD8////AAABAAEAAAD8//7/AAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD7//z/AAABAAEAAAD9//z/AAABAAEAAAD+//z/AAABAAEAAAD+//3/AAABAAEAAAD5//z/AAABAAEAAAACAP3/AAABAAEAAAACAP//AAABAAEAAAD5/wMAAAABAAEAAAD6/wMAAAABAAEAAAD7/wMAAAABAAEAAAD8/wMAAAABAAEAAAD9/wMAAAABAAEAAAD+/wMAAAABAAEAAAD//wMAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAFAAMAAAABAAEAAAAFAAIAAAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAFAPz/AAABAAEAAAAFAAAAAAABAAEAAAAFAAEAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAAAAP7/AAABAAEAAAACAAAAAAABAAEAAAAEAP//AAAPAAAAAAD+//v/AAABAAEAAAD5//r/AAABAAEAAAD6//r/AAABAAEAAAD7//r/AAABAAEAAAD8//r/AAABAAEAAAD9//r/AAABAAEAAAD+//r/AAABAAEAAAD///r/AAABAAEAAAAAAPr/AAABAAEAAAABAPr/AAABAAEAAAACAPr/AAABAAEAAAADAPr/AAABAAEAAAAEAPr/AAABAAEAAAAFAPr/AAABAAEAAAADAP3/AAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="Hole" type="Node2D" parent="Puzzle" unique_id=74564028]
+
+[node name="Hole1" parent="Puzzle/Hole" unique_id=821144530 instance=ExtResource("3_wrnl3")]
+position = Vector2(-7.9999995, -40)
+scale = Vector2(0.405, 0.405)
+
+[node name="Hole2" parent="Puzzle/Hole" unique_id=1104524264 instance=ExtResource("3_wrnl3")]
+position = Vector2(72, -40)
+scale = Vector2(0.405, 0.405)
+
+[node name="Hole3" parent="Puzzle/Hole" unique_id=1965992717 instance=ExtResource("3_wrnl3")]
+position = Vector2(-72, 7.9999924)
+scale = Vector2(0.405, 0.405)
+
+[node name="Victory_Hole" type="Node2D" parent="Puzzle" unique_id=894148196]
+
+[node name="Victory_Hole" parent="Puzzle/Victory_Hole" unique_id=1860286002 instance=ExtResource("4_tcqsn")]
+position = Vector2(-8.000008, -72)
+scale = Vector2(0.815, 0.815)
+proxima_fase = "uid://c00pxao2c41n6"
+anim_victory = "idle"
+
+[node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]
+
+[node name="Crusher" parent="Puzzle/Crusher" unique_id=137784550 instance=ExtResource("5_6q6d4")]
+position = Vector2(40, -24)
+
+[node name="Crusher3" parent="Puzzle/Crusher" unique_id=455207057 instance=ExtResource("5_6q6d4")]
+position = Vector2(-88, -56)
+rotation = 1.5858482
+
+[node name="Crusher2" parent="Puzzle/Crusher" unique_id=780963681 instance=ExtResource("5_6q6d4")]
+position = Vector2(-32, 40)
+rotation = 3.1648352
+anim_nova = "idle"
+
+[node name="Ball" parent="." unique_id=362484177 instance=ExtResource("6_l3elg")]
+position = Vector2(-144, -48)
