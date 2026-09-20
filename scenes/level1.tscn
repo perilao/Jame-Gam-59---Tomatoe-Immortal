@@ -270,6 +270,9 @@ layer = -5
 script = ExtResource("1_2ku1j")
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=882822949]
+anchors_preset = -1
+anchor_right = 0.35253143
+anchor_bottom = 0.35277778
 offset_left = -75.0
 offset_top = -45.0
 offset_right = 1275.1676
@@ -280,19 +283,20 @@ texture = ExtResource("2_f31uk")
 metadata/_edit_use_anchors_ = true
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Background" unique_id=1148846418]
-position = Vector2(528, 368)
+position = Vector2(833.7798, 734.45306)
 scale = Vector2(0.6851873, 0.677989)
 sprite_frames = SubResource("SpriteFrames_mvsps")
 animation = &"turn_right"
 
 [node name="RightHand" type="AnimatedSprite2D" parent="Background" unique_id=2080585365]
-position = Vector2(728.00006, 400.45303)
+position = Vector2(1033.7798, 766.90607)
 scale = Vector2(0.71438485, 0.7143848)
 sprite_frames = SubResource("SpriteFrames_jvkml")
 animation = &"turn_right"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=920035897]
 position = Vector2(8, 0)
+zoom = Vector2(2.3, 2.3)
 
 [node name="Puzzle" type="Node2D" parent="." unique_id=951341005 node_paths=PackedStringArray("camera")]
 position = Vector2(-16, -16)
