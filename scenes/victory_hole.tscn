@@ -1,10 +1,51 @@
 [gd_scene format=3 uid="uid://bxgee4m7mc4sl"]
 
 [ext_resource type="Script" uid="uid://dylk56ftdxdte" path="res://scripts/victory_hole.gd" id="1_msnkc"]
-[ext_resource type="Texture2D" uid="uid://c2mgaj3oyw04u" path="res://outros/WhatsApp Image 2026-03-24 at 20.42.19 (1).jpeg" id="1_nhc6f"]
+[ext_resource type="Texture2D" uid="uid://c6dn4jb4l35ws" path="res://sprites/holes/TOMATINHO AMASSADINHO PAPELÃO SILHUETA.png" id="2_27mqa"]
+[ext_resource type="Texture2D" uid="uid://cd43eemx1j6ph" path="res://sprites/holes/TOMATINHO silhueta 1.png" id="3_mx1o6"]
+[ext_resource type="Texture2D" uid="uid://deem7ruqxpdsx" path="res://sprites/holes/TOMATINHO CORTADINHO SILHUETA.png" id="4_7cs2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmyeo"]
+atlas = ExtResource("2_27mqa")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nbld"]
+atlas = ExtResource("3_mx1o6")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvauw"]
+atlas = ExtResource("4_7cs2w")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmyeo")
+}],
+"loop": 1,
+"name": &"crushed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nbld")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvauw")
+}],
+"loop": 1,
+"name": &"pieces",
+"speed": 5.0
+}]
 
 [node name="Victory_Hole" type="Area2D" unique_id=1717464914]
 script = ExtResource("1_msnkc")
@@ -12,6 +53,8 @@ script = ExtResource("1_msnkc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=341661599]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=622452967]
-scale = Vector2(0.053880204, 0.053880204)
-texture = ExtResource("1_nhc6f")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=511756230]
+position = Vector2(-1.1920929e-07, -1.1920929e-07)
+scale = Vector2(0.050377604, 0.050377604)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"pieces"

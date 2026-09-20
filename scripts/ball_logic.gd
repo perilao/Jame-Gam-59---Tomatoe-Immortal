@@ -26,6 +26,8 @@ var tamanho_original: Vector2
 @export var velocidade_minima := 80.0
 @export var velocidade_maxima := 600.0
 var _vel_anterior := Vector2.ZERO
+#CAMERASHAKE
+var _tween_tremor: Tween
 
 func _ready() -> void:
 	origem = global_position
@@ -100,6 +102,7 @@ func _animar_queda(pos_buraco: Vector2) -> void:
 func cair(pos_buraco: Vector2) -> void:
 	if caindo:
 		return
+	_tremer_tela()
 	await _animar_queda(pos_buraco)
 	global_position = origem
 	linear_velocity = Vector2.ZERO
@@ -119,7 +122,9 @@ func next_phase(pos_buraco: Vector2, cena: String, anim_victory: String) -> void
 		return
 	if anim_victory != "" and sprite.animation != anim_victory:
 		cair(pos_buraco)
+		SoundControl.defeat.play()
 		return
+	SoundControl.victory.play()
 	await _animar_queda(pos_buraco)
 	SceneManager.mudar_cena(cena)
 
@@ -157,3 +162,18 @@ func _usar_nova(nova: bool) -> void:
 	camada_nova.visible = nova
 	mat_antigo.set_shader_parameter("ativo", false)
 	mat_novo.set_shader_parameter("ativo", false)
+
+func _tremer_tela(forca := 80.0, duracao := 0.35) -> void:
+	var cam := get_viewport().get_camera_2d()
+	if cam == null:
+		return
+	if _tween_tremor and _tween_tremor.is_valid():
+		_tween_tremor.kill()
+	var base := cam.offset
+	var passos := 8
+	_tween_tremor = create_tween()
+	for i in passos:
+		var f := forca * (1.0 - float(i) / passos)
+		var desvio := Vector2(randf_range(-f, f), randf_range(-f, f))
+		_tween_tremor.tween_property(cam, "offset", base + desvio, duracao / passos)
+	_tween_tremor.tween_property(cam, "offset", base, 0.03)
