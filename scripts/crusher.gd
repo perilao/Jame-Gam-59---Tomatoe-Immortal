@@ -20,9 +20,8 @@ func _on_body_entered(corpo: Node2D) -> void:
 			SoundControl.crush.play()
 		if tipo == "obj2":
 			SoundControl.cut.play()
-		#if tipo == "obj3":
-			#SoundControl..play()
-
+		if tipo == "obj3":
+			SoundControl.heal.play()
 
 func _on_body_exited(corpo: Node2D) -> void:
 	if corpo.has_method("sair_triturador"):

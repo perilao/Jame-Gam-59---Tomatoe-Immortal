@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bho1xf0s8iqyp" path="res://audio/DerrotaB2.mp3" id="4_14hci"]
 [ext_resource type="AudioStream" uid="uid://ceiaiqav67745" path="res://audio/tomateCorte5_cut.mp3" id="5_14hci"]
 [ext_resource type="AudioStream" uid="uid://chikgwnn8oqeq" path="res://audio/tomateHitW_cut.mp3" id="6_spwh5"]
+[ext_resource type="AudioStream" uid="uid://beige5ipmoh1l" path="res://audio/error2.mp3" id="7_spwh5"]
+[ext_resource type="AudioStream" uid="uid://dhn1cyjnec332" path="res://audio/CuraSegundoSom.mp3" id="8_ayx8a"]
 
 [node name="SoundControl" type="Node" unique_id=1776721865]
 script = ExtResource("1_85dk6")
@@ -25,3 +27,10 @@ stream = ExtResource("5_14hci")
 
 [node name="hit_wall" type="AudioStreamPlayer" parent="." unique_id=754354682]
 stream = ExtResource("6_spwh5")
+
+[node name="error" type="AudioStreamPlayer" parent="." unique_id=820096474]
+stream = ExtResource("7_spwh5")
+
+[node name="heal" type="AudioStreamPlayer" parent="." unique_id=568760980]
+stream = ExtResource("8_ayx8a")
+mix_target = 2

@@ -122,7 +122,7 @@ func next_phase(pos_buraco: Vector2, cena: String, anim_victory: String) -> void
 		return
 	if anim_victory != "" and sprite.animation != anim_victory:
 		cair(pos_buraco)
-		SoundControl.defeat.play()
+		SoundControl.error.play()
 		_piscar_vermelho()
 		return
 	SoundControl.victory.play()
