@@ -1,10 +1,51 @@
 [gd_scene format=3 uid="uid://cb7ovnimppj0g"]
 
 [ext_resource type="Script" uid="uid://270x7byxye0c" path="res://scripts/crusher.gd" id="1_pmi7a"]
-[ext_resource type="Texture2D" uid="uid://dkj4d1024t0ua" path="res://outros/image (2).png" id="2_i7g8o"]
+[ext_resource type="Texture2D" uid="uid://pnolganehe74" path="res://sprites/objects/OBJETO_ESPECIAL_TRONCO.png" id="2_1075v"]
+[ext_resource type="Texture2D" uid="uid://cadl7uop06bm2" path="res://sprites/objects/OBJETO_ESPECIAL_ESPADAS.png" id="3_jub50"]
+[ext_resource type="Texture2D" uid="uid://v24wgsuyg7vo" path="res://sprites/objects/OBJETO_ESPECIAL_CURA.png" id="4_yg3oy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmi7a"]
 size = Vector2(11, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb6o2"]
+atlas = ExtResource("2_1075v")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy8sb"]
+atlas = ExtResource("3_jub50")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jy0p"]
+atlas = ExtResource("4_yg3oy")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb6o2")
+}],
+"loop": 1,
+"name": &"obj1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy8sb")
+}],
+"loop": 1,
+"name": &"obj2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jy0p")
+}],
+"loop": 1,
+"name": &"obj3",
+"speed": 5.0
+}]
 
 [node name="Crusher" type="Area2D" unique_id=137784550]
 z_index = 1
@@ -14,7 +55,9 @@ script = ExtResource("1_pmi7a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1348825821]
 shape = SubResource("RectangleShape2D_pmi7a")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=144313087]
-position = Vector2(-4.4703484e-07, -1.0430813e-06)
-scale = Vector2(0.01953125, 0.026041668)
-texture = ExtResource("2_i7g8o")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1952474838]
+position = Vector2(-3.5527137e-15, -2.1175824e-22)
+rotation = -1.5707964
+scale = Vector2(0.038881633, 0.032855436)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"obj3"

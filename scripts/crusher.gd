@@ -1,10 +1,15 @@
 extends Area2D
 
+@export_enum("obj1", "obj2", "obj3") var tipo := "obj1"
+
 @export var lentidao := 6.0
 @export var direcao := Vector2.RIGHT
 @export var anim_nova := "crushed"
+@onready var sprite: AnimatedSprite2D = $Sprite2D
+
 
 func _ready() -> void:
+	sprite.play(tipo)
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 

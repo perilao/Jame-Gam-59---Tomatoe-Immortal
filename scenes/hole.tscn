@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://qgk8vavffuk8"]
 
 [ext_resource type="Script" uid="uid://b5jcpdey8djkr" path="res://scripts/hole.gd" id="1_lerre"]
+[ext_resource type="Texture2D" uid="uid://vopb3udjw6vx" path="res://sprites/holes/buracobranco3.png" id="2_iyxdx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 13.038404
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g4v7s"]
 
 [node name="Node2D" type="Node2D" unique_id=821144530]
 
@@ -16,6 +15,5 @@ script = ExtResource("1_lerre")
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=394442048]
-position = Vector2(0, -2.842171e-14)
-scale = Vector2(29, 28)
-texture = SubResource("PlaceholderTexture2D_g4v7s")
+scale = Vector2(0.056082588, 0.054148704)
+texture = ExtResource("2_iyxdx")
