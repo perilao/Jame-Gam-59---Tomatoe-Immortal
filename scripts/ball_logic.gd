@@ -22,6 +22,10 @@ var textura_original: Texture2D
 var tamanho_original: Vector2
 #EXPLOSION EFFECT
 @export var efeito_spawn: PackedScene
+#HITSOUND
+@export var velocidade_minima := 80.0
+@export var velocidade_maxima := 600.0
+var _vel_anterior := Vector2.ZERO
 
 func _ready() -> void:
 	origem = global_position
@@ -40,6 +44,24 @@ func _ready() -> void:
 	camada_nova.scale = Vector2.ONE
 	sprite.add_child(camada_nova)
 	_fim_transicao()
+
+	#HITSOUND
+	contact_monitor = true
+	max_contacts_reported = 4
+	body_entered.connect(_on_batida)
+
+func _physics_process(_delta: float) -> void:
+	_vel_anterior = linear_velocity
+
+func _on_batida(corpo: Node) -> void:
+	if not corpo is TileMapLayer or caindo:
+		return
+	var impacto := _vel_anterior.length()
+	if impacto < velocidade_minima:
+		return
+	SoundControl.hit_wall.pitch_scale = randf_range(0.9, 1.1)
+	SoundControl.hit_wall.volume_db = linear_to_db(clampf(impacto / velocidade_maxima, 0.3, 1.0))
+	SoundControl.hit_wall.play()
 
 func _spawn_efeito() -> void:
 	if efeito_spawn == null:

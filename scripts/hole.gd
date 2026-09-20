@@ -6,3 +6,4 @@ func _ready() -> void:
 func _on_body_entered(corpo: Node2D) -> void:
 	if corpo.has_method("cair"):
 		corpo.call_deferred("cair", global_position)
+		SoundControl.defeat.play()

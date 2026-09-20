@@ -9,3 +9,4 @@ func _ready() -> void:
 func _on_body_entered(corpo: Node2D) -> void:
 	if corpo.has_method("next_phase"):
 		corpo.call_deferred("next_phase", global_position, proxima_fase, anim_victory)
+		SoundControl.victory.play()

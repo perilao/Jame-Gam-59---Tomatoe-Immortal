@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://88ypb55wu2qa"]
 
 [ext_resource type="Script" uid="uid://djbg6gi725lao" path="res://scripts/sound_control.gd" id="1_85dk6"]
+[ext_resource type="AudioStream" uid="uid://d4ctbmy2t85h1" path="res://audio/Vitoria2.mp3" id="2_omfio"]
+[ext_resource type="AudioStream" uid="uid://cirfchfrq1ech" path="res://audio/tomateEsmagado5.mp3" id="3_17tn0"]
+[ext_resource type="AudioStream" uid="uid://bho1xf0s8iqyp" path="res://audio/DerrotaB2.mp3" id="4_14hci"]
+[ext_resource type="AudioStream" uid="uid://ceiaiqav67745" path="res://audio/tomateCorte5_cut.mp3" id="5_14hci"]
+[ext_resource type="AudioStream" uid="uid://chikgwnn8oqeq" path="res://audio/tomateHitW_cut.mp3" id="6_spwh5"]
 
 [node name="SoundControl" type="Node" unique_id=1776721865]
 script = ExtResource("1_85dk6")
+
+[node name="victory" type="AudioStreamPlayer" parent="." unique_id=1689314961]
+stream = ExtResource("2_omfio")
+
+[node name="crush" type="AudioStreamPlayer" parent="." unique_id=560357736]
+stream = ExtResource("3_17tn0")
+volume_db = -8.211
+
+[node name="defeat" type="AudioStreamPlayer" parent="." unique_id=386930944]
+stream = ExtResource("4_14hci")
+
+[node name="cut" type="AudioStreamPlayer" parent="." unique_id=1400479802]
+stream = ExtResource("5_14hci")
+
+[node name="hit_wall" type="AudioStreamPlayer" parent="." unique_id=754354682]
+stream = ExtResource("6_spwh5")
