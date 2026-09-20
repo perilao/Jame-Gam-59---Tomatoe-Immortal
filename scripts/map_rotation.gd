@@ -12,6 +12,12 @@ var angulo_alvo := 0.0  # rotação aparente do labirinto
 
 @onready var mapa: TileMapLayer = $TileMapLayer
 
+#HAND ROTATION
+@export var mao_esquerda: AnimatedSprite2D
+@export var mao_direita: AnimatedSprite2D
+@export var folga_maos := 0.0
+
+
 func _ready() -> void:
 	camera.ignore_rotation = false
 	_centralizar_camera()
@@ -26,6 +32,7 @@ func _process(delta: float) -> void:
 		girar(90)
 	
 	camera.rotation = lerp_angle(camera.rotation, -angulo_alvo, 1.0 - exp(-velocidade_rotacao * delta))
+	_atualizar_maos()
 	#camera.global_position = ball.global_position
 
 func _centralizar_camera() -> void:
@@ -44,3 +51,13 @@ func girar(graus: float) -> void:
 	_tween_zoom = create_tween()
 	_tween_zoom.tween_property(camera, "zoom", zoom_base * zoom_pulo, 0.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	_tween_zoom.tween_property(camera, "zoom", zoom_base, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+func _atualizar_maos() -> void:
+	var r := mapa.get_used_rect()
+	var tam := Vector2(r.size) * Vector2(mapa.tile_set.tile_size) * mapa.global_scale.abs()
+	var c := absf(cos(camera.rotation))
+	var s := absf(sin(camera.rotation))
+	var meia_largura := (tam.x * c + tam.y * s) / 2.0 * camera.zoom.x
+	var centro_x := get_viewport_rect().size.x / 2.0
+	mao_esquerda.position.x = centro_x - meia_largura - folga_maos
+	mao_direita.position.x = centro_x + meia_largura + folga_maos
