@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://pagp58vakrxp"]
 
 [ext_resource type="Script" uid="uid://doxm6rb5bjwao" path="res://scripts/background.gd" id="1_ajshl"]
-[ext_resource type="Texture2D" uid="uid://5mgy6q078e4k" path="res://sprites/background/image (3).png" id="1_jcd4p"]
+[ext_resource type="Texture2D" uid="uid://chckmb0gwibre" path="res://sprites/background/BACKGROUND_ESCURO.png" id="2_ajshl"]
 [ext_resource type="Script" uid="uid://bqrbneebswutk" path="res://scripts/map_rotation.gd" id="2_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://qgk8vavffuk8" path="res://scenes/hole.tscn" id="3_74lek"]
 [ext_resource type="SpriteFrames" uid="uid://3b30ejs77o7d" path="res://sprites/tileset/hand_sprites.tres" id="3_ajshl"]
@@ -150,21 +150,21 @@ offset_right = 1948.4749
 offset_bottom = 1094.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_jcd4p")
+texture = ExtResource("2_ajshl")
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Background" unique_id=170653019]
 position = Vector2(799.7798, 836.45306)
 scale = Vector2(0.6851873, 0.677989)
 sprite_frames = ExtResource("3_ajshl")
 animation = &"turn_right"
-frame = 7
-frame_progress = 1.0
 
 [node name="RightHand" type="AnimatedSprite2D" parent="Background" unique_id=638388615]
 position = Vector2(1095.7798, 868.453)
 scale = Vector2(0.71438485, 0.7143848)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
-animation = &"turn_right"
+animation = &"turn_left"
+frame = 7
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=920035897]
 position = Vector2(600, 350)

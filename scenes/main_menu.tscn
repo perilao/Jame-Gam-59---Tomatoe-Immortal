@@ -16,17 +16,17 @@ script = ExtResource("1_wu84c")
 prox_cena = "uid://qtu7fflbonot"
 
 [node name="Image(3)" type="Sprite2D" parent="." unique_id=1732074451]
-position = Vector2(633.0001, 350.00003)
-scale = Vector2(1.4702048, 1.4702048)
+position = Vector2(939.67456, 522.625)
+scale = Vector2(2.1131282, 2.1131284)
 texture = ExtResource("1_bqqt6")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=200360901]
 layout_mode = 0
-offset_left = 510.0
-offset_top = 471.99997
-offset_right = 1022.0
-offset_bottom = 984.0
-scale = Vector2(0.385, 0.385)
+offset_left = 792.00006
+offset_top = 672.0
+offset_right = 1304.0
+offset_bottom = 1184.0
+scale = Vector2(0.68, 0.68)
 texture_normal = ExtResource("2_ekxnf")
 stretch_mode = 0
 script = ExtResource("1_l6cm7")
