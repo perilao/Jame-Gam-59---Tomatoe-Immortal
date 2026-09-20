@@ -18,10 +18,10 @@ layer = -5
 script = ExtResource("1_ajshl")
 
 [node name="TextureRect" type="TextureRect" parent="Background" unique_id=2102201539]
-offset_left = -75.0
-offset_top = -45.0
-offset_right = 1948.4749
-offset_bottom = 1094.0
+offset_left = -152.0
+offset_top = -74.0
+offset_right = 2068.6704
+offset_bottom = 1176.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_ajshl")

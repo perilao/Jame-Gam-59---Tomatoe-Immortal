@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dx8xi7pq38enc" path="res://scripts/animated_button.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://d34nqsoa7xk3l" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://v24wgsuyg7vo" path="res://sprites/objects/OBJETO_ESPECIAL_CURA.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://0wofbvaav8vl" path="res://sprites/ui/Papomato!_logo.png" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://cudlll2rp2mj3" path="res://scripts/title_float.gd" id="6_rtw2f"]
 
 [node name="MainMenu" type="Control" unique_id=1831751865]
 layout_mode = 3
@@ -32,5 +34,15 @@ stretch_mode = 0
 script = ExtResource("1_l6cm7")
 distancia = 800.0
 duracao = 1.5
+
+[node name="title" type="TextureRect" parent="." unique_id=563693689]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 104.0
+offset_right = 1650.0
+offset_bottom = 499.0
+texture = ExtResource("5_8ln24")
+script = ExtResource("6_rtw2f")
+duracao = 2.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
