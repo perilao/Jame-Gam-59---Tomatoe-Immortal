@@ -77,6 +77,7 @@ scale = Vector2(0.405, 0.405)
 [node name="Victory_Hole" parent="Puzzle/Victory_Hole" unique_id=1860286002 instance=ExtResource("4_tcqsn")]
 position = Vector2(-8.000008, -72)
 scale = Vector2(0.815, 0.815)
+objective = "pieces"
 proxima_fase = "uid://c00pxao2c41n6"
 anim_victory = "pieces"
 
@@ -90,6 +91,7 @@ anim_nova = "idle"
 [node name="Crusher3" parent="Puzzle/Crusher" unique_id=455207057 instance=ExtResource("5_6q6d4")]
 position = Vector2(-88, -56)
 rotation = 1.5858482
+direcao = Vector2(0, 1)
 
 [node name="Crusher2" parent="Puzzle/Crusher" unique_id=780963681 instance=ExtResource("5_6q6d4")]
 position = Vector2(-32, 40)
