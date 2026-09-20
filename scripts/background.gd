@@ -13,8 +13,8 @@ func _reiniciar(de_tras: bool) -> void:
 	for mao in [left_hand, right_hand]:
 		mao.stop()
 		if de_tras:
-			mao.set_frame_and_progress(mao.sprite_frames.get_frame_count("turn") - 1, 1.0)
-			mao.play_backwards("turn")
+			mao.set_frame_and_progress(mao.sprite_frames.get_frame_count("turn_left") - 1, 1.0)
+			mao.play("turn_right")
 		else:
 			mao.set_frame_and_progress(0, 0.0)
-			mao.play("turn")
+			mao.play("turn_left")
