@@ -30,5 +30,7 @@ scale = Vector2(0.385, 0.385)
 texture_normal = ExtResource("2_ekxnf")
 stretch_mode = 0
 script = ExtResource("1_l6cm7")
+distancia = 800.0
+duracao = 1.5
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
