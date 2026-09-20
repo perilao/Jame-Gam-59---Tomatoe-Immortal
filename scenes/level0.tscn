@@ -11,24 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://cb7ovnimppj0g" path="res://scenes/crusher.tscn" id="5_6q6d4"]
 [ext_resource type="PackedScene" uid="uid://d4grr2dyn2sct" path="res://scenes/ball.tscn" id="6_l3elg"]
 
-[node name="Node2D" type="Node2D" unique_id=409671772]
+[node name="Node2D2" type="Node2D" unique_id=409671772]
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1613012101]
 layer = -5
 script = ExtResource("1_6hrqr")
 
-[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1135956898]
-anchors_preset = -1
-anchor_right = 0.35253143
-anchor_bottom = 0.35277778
-offset_left = -75.0
-offset_top = -45.0
-offset_right = 1275.1676
-offset_bottom = 715.0
+[node name="TextureRect2" type="TextureRect" parent="Background" unique_id=1542196144]
+offset_left = -152.0
+offset_top = -74.0
+offset_right = 2068.6704
+offset_bottom = 1176.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_6hrqr")
-metadata/_edit_use_anchors_ = true
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Background" unique_id=1087505912]
 position = Vector2(873.7798, 726.45306)

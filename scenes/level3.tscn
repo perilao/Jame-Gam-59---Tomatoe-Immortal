@@ -11,24 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://d4grr2dyn2sct" path="res://scenes/ball.tscn" id="6_fh4ka"]
 [ext_resource type="Script" uid="uid://doxm6rb5bjwao" path="res://scripts/background.gd" id="8_bradm"]
 
-[node name="Node2D" type="Node2D" unique_id=409671772]
+[node name="Node2D2" type="Node2D" unique_id=409671772]
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=354046733]
 layer = -5
 script = ExtResource("8_bradm")
 
-[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1774164493]
-anchors_preset = -1
-anchor_right = 0.35068086
-anchor_bottom = 0.35092592
-offset_left = -75.0
-offset_top = -45.0
-offset_right = 1275.1676
-offset_bottom = 715.0
+[node name="TextureRect2" type="TextureRect" parent="Background" unique_id=239446340]
+offset_left = -198.0
+offset_top = -74.0
+offset_right = 2022.6704
+offset_bottom = 1176.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_qewby")
-metadata/_edit_use_anchors_ = true
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Background" unique_id=727914461]
 position = Vector2(881.7798, 730.45306)
@@ -86,7 +82,7 @@ scale = Vector2(0.405, 0.405)
 position = Vector2(-104, 8)
 scale = Vector2(0.815, 0.815)
 objective = "idle"
-proxima_fase = "uid://rsf7mp8r5nmo"
+proxima_fase = "uid://dlbo8j0867rkb"
 anim_victory = "idle"
 
 [node name="Crusher" type="Node2D" parent="Puzzle" unique_id=722418182]

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dlbo8j0867rkb"]
 
 [ext_resource type="Script" uid="uid://doxm6rb5bjwao" path="res://scripts/background.gd" id="1_jvphm"]
-[ext_resource type="Texture2D" uid="uid://5mgy6q078e4k" path="res://sprites/background/image (3).png" id="2_g1xgd"]
+[ext_resource type="Texture2D" uid="uid://chckmb0gwibre" path="res://sprites/background/BACKGROUND_ESCURO.png" id="2_jvphm"]
 [ext_resource type="Texture2D" uid="uid://dt4ncu132onc1" path="res://sprites/background/MÃO-ESQUERDA-SPRITESHEET.png" id="3_3n7tn"]
 [ext_resource type="Texture2D" uid="uid://c134u2cee43ye" path="res://sprites/background/MÃO-DIREITA-INVERTIDA-SPRITESHEET.png" id="4_8f67t"]
 [ext_resource type="Texture2D" uid="uid://biefo2dfm8bc7" path="res://sprites/background/MÃ-DIREITA-SPRITESHEET.png" id="5_2vnbt"]
@@ -263,24 +263,20 @@ animations = [{
 "speed": 13.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=409671772]
+[node name="Node2D2" type="Node2D" unique_id=409671772]
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=354046733]
 layer = -5
 script = ExtResource("1_jvphm")
 
-[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1774164493]
-anchors_preset = -1
-anchor_right = 0.34512913
-anchor_bottom = 0.34537038
-offset_left = -75.0
-offset_top = -45.0
-offset_right = 1275.1676
-offset_bottom = 715.0
+[node name="TextureRect2" type="TextureRect" parent="Background" unique_id=359589047]
+offset_left = -104.0
+offset_top = -83.0
+offset_right = 2116.6704
+offset_bottom = 1167.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_g1xgd")
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_jvphm")
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="Background" unique_id=727914461]
 position = Vector2(831.7798, 720.45306)
@@ -297,12 +293,14 @@ animation = &"turn_right"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=920035897]
 zoom = Vector2(2.5, 2.5)
 
-[node name="Puzzle" type="Node2D" parent="." unique_id=951341005 node_paths=PackedStringArray("camera")]
+[node name="Puzzle" type="Node2D" parent="." unique_id=951341005 node_paths=PackedStringArray("camera", "mao_esquerda", "mao_direita")]
 position = Vector2(64, -64)
 scale = Vector2(2, 2)
 script = ExtResource("7_ivevn")
 camera = NodePath("../Camera2D")
 velocidade_rotacao = 5.0
+mao_esquerda = NodePath("../Background/LeftHand")
+mao_direita = NodePath("../Background/RightHand")
 
 [node name="TileMapLayer" parent="Puzzle" unique_id=1082280315 instance=ExtResource("8_j8vkp")]
 tile_map_data = PackedByteArray("AAD4//7/AwAEAAEAAAD4/wEAAwAEAAMAAAD5/wEAAwAFAAAAAAD6/wEAAwAEAAMAAGD6/wIAAwAFAAEAACD6/wMAAwAFAAMAADD5/wMAAwAFAAEAACD4/wMAAwAEAAEAAAD6/wQAAwAFAAEAACD6/wUAAwAFAAEAACD5/wUAAwAFAAEAACD4/wUAAwAGAAEAAAD7/wUAAwAFAAEAACD8/wUAAwAFAAEAACD9/wUAAwAFAAMAADD9/wQAAwAFAAEAACD9/wMAAwAEAAMAAGD8/wMAAwAFAAIAAAD9/wIAAwAFAAEAAAD9/wEAAwAFAAEAACD5//z/AwAFAAAAAAD6//z/AwAFAAIAAAD6//3/AwAFAAEAACD6//7/AwAFAAEAACD6////AwAFAAMAAGD7////AwAFAAEAACD8////AwAEAAEAAAD+/wEAAwABAAEAAAD//wEAAwACAAEAAAD//wIAAwACAAEAAAD//wMAAwAFAAIAAAD//wQAAwAEAAEAAAD//wcAAwAFAAIAAAAAAAcAAwAFAAAAAAACAAcAAwAFAAIAAAACAAYAAwAFAAEAACACAAUAAwAFAAEAACACAAQAAwAFAAEAAAADAAQAAwAEAAMAADADAAUAAwAEAAEAAAADAPz/AwAGAAAAAAD///z/AwAFAAAAAAD+//z/AwAFAAAAAAD+//3/AwAFAAEAACD+//7/AwAFAAEAAAD///7/AwAFAAMAAFAAAP7/AwAFAAEAACABAP7/AwAFAAEAACABAP//AwAFAAMAAAABAAAAAwAFAAEAACABAAEAAwAFAAMAAAAAAAEAAwABAAEAAAACAAEAAwAFAAEAACACAAAAAwAFAAEAACADAAAAAwAGAAEAAAD8/wcAAwAFAAIAAAD8/wYAAwAFAAEAACD7/wYAAwAFAAEAACD6/wYAAwAFAAMAAGD5/wYAAwAFAAEAACD4/wYAAwAGAAEAAAD4/wIAAwAGAAEAAAD5/wIAAwAFAAEAACD4/wQAAwAEAAEAAAD5/wQAAwAFAAEAACD4/wcAAwAEAAIAAAD5/wcAAwAFAAIAAAD6/wcAAwAEAAMAAGD7/wcAAwAFAAIAAAD9/wYAAwAFAAEAACD9/wcAAwAFAAAAAAD+/wcAAwAFAAAAAAD+/wYAAwAFAAEAACD+/wUAAwAFAAEAAAD+/wQAAwAFAAEAACD+/wMAAwAFAAIAAAD+/wIAAwABAAEAAAD//wUAAwAEAAEAAAD//wYAAwAFAAEAACAAAAYAAwAFAAEAACAAAAUAAwAFAAEAACAAAAQAAwAFAAEAACAAAAMAAwABAAAAAAABAAIAAwAFAAEAACABAAMAAwABAAMAAAABAAQAAwAFAAEAACABAAUAAwAEAAEAAAABAAYAAwAFAAEAAAABAAcAAwAEAAMAAGACAAMAAwAFAAEAACACAAIAAwAFAAEAACADAAIAAwAGAAEAAAADAAEAAwAGAAEAAAADAAMAAwAEAAEAAAADAP3/AwAGAAEAAAACAP3/AwAFAAEAACACAPz/AwAFAAIAAAD7//z/AwAFAAAAAAD7//3/AwAFAAEAACD7//7/AwAFAAEAACD8//7/AwAEAAEAAAD8//3/AwAFAAEAAAD8//z/AwAEAAMAAFD9//z/AwAFAAAAAAD9//3/AwAFAAEAACD9//7/AwAFAAEAAAD9////AwAFAAMAAAD9/wAAAwAFAAEAACD8/wAAAwAFAAEAACD7/wAAAwAFAAEAACD5/wAAAwAFAAEAACD5////AwAFAAEAACD5//7/AwAFAAEAACD5//3/AwAFAAEAACD4//3/AwAEAAEAAAD4//z/AwAEAAAAAAD7/wEAAwAGAAAAAAD7/wIAAwAEAAEAAAD7/wQAAwAFAAMAAFD8/wQAAwAFAAEAACD8/wIAAwAFAAEAACD8/wEAAwAFAAEAACD+/wAAAwABAAEAAAD+////AwABAAEAAAD/////AwAFAAEAAAD//wAAAwABAAMAAGAAAAAAAwAFAAEAAAAAAPz/AwAFAAAAAAAAAP3/AwABAAEAAAD///3/AwAEAAEAAAABAP3/AwAFAAEAACABAPz/AwAFAAIAAAACAP7/AwAFAAEAACACAP//AwAFAAEAACADAP//AwAEAAEAAAADAP7/AwAEAAEAAAADAAYAAwAEAAEAAAADAAcAAwAGAAIAAAD4////AwAEAAEAAAD4/wAAAwAEAAEAAAD7/wMAAwAEAAMAAFD6/wAAAwAFAAEAAAAAAP//AwABAAEAAAAAAAIAAwAFAAEAACA=")
