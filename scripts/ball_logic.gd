@@ -123,6 +123,7 @@ func next_phase(pos_buraco: Vector2, cena: String, anim_victory: String) -> void
 	if anim_victory != "" and sprite.animation != anim_victory:
 		cair(pos_buraco)
 		SoundControl.defeat.play()
+		_piscar_vermelho()
 		return
 	SoundControl.victory.play()
 	await _animar_queda(pos_buraco)
@@ -177,3 +178,21 @@ func _tremer_tela(forca := 80.0, duracao := 0.35) -> void:
 		var desvio := Vector2(randf_range(-f, f), randf_range(-f, f))
 		_tween_tremor.tween_property(cam, "offset", base + desvio, duracao / passos)
 	_tween_tremor.tween_property(cam, "offset", base, 0.03)
+
+func _piscar_vermelho(duracao := 0.5, piscadas := 2, cor := Color(1.0, 0.1, 0.1, 0.45)) -> void:
+	var camada := CanvasLayer.new()
+	camada.layer = 50
+	var rect := ColorRect.new()
+	rect.color = cor
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	rect.modulate.a = 0.0
+	camada.add_child(rect)
+	get_tree().current_scene.add_child(camada)
+	rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
+	var pulso := duracao / piscadas
+	var t := create_tween()
+	for i in piscadas:
+		t.tween_property(rect, "modulate:a", 1.0, pulso * 0.3)
+		t.tween_property(rect, "modulate:a", 0.0, pulso * 0.7)
+	t.tween_callback(camada.queue_free)
